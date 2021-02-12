@@ -17,7 +17,7 @@ class CreateBlogCategoriesTable extends Migration
             $table->id();
             $table->string('category_name', 150);
             $table->timestamps();
-        });
+            });
     }
 
     /**
