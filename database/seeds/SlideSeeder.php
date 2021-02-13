@@ -11,10 +11,9 @@ class SlideSeeder extends Seeder
      */
     public function run()
     {
-      Slide::create(["name"=>"slide1","image"=>"slide.jpg"]);
-      Slide::create(["name"=>"slide2","image"=>"slide.jpg"]);
-      Slide::create(["name"=>"slide3","image"=>"slide.jpg"]);
-      Slide::create(["name"=>"slide4","image"=>"slide.jpg"]);
-
+        Slide::create(["slide_name" => "slide1", "slide_image" => "slide.jpg"]);
+        Slide::create(["slide_name" => "slide2", "slide_image" => "slide.jpg"]);
+        Slide::create(["slide_name" => "slide3", "slide_image" => "slide.jpg"]);
+        Slide::create(["slide_name" => "slide4", "slide_image" => "slide.jpg"]);
     }
 }

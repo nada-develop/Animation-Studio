@@ -14,12 +14,11 @@ class DatabaseSeeder extends Seeder
          //$this->call(UserSeeder::class);
          $this->call(AboutSeeder::class);
          $this->call(AwardSeeder::class);
-         $this->call(Blog_CategorySeeder::class);
+         $this->call(BlogCategorySeeder::class);
          $this->call(BlogSeeder::class);
          $this->call(CategorySeeder::class);
          $this->call(PortfolioSeeder::class);
          $this->call(SlideSeeder::class);
          $this->call(ContactSeeder::class);
-
     }
 }

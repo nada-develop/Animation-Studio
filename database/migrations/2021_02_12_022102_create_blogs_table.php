@@ -17,13 +17,13 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('image', 150);
             $table->string('title',150);
-            $table->string('description', 255);
+            $table->text('description');
             $table->string('author_name', 255);
             $table->date('date');
             $table->unsignedBigInteger('category_id')->index();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('blog_categories')->onUpdate('cascade')->onDelete('restrict');
-          
+
         });
     }
 

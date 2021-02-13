@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 class Portfolio extends Model
 {
-    public function Category(){
-        
+    public function category(){
         return $this->belongsTo(Category::class);
     }
 }

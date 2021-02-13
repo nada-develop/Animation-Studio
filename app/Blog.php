@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\BlogCategory;
 class Blog extends Model
 {
-    public function BlogCategory(){
-
+    public function category(){
         return $this->belongsTo(BlogCategory::class);
     }
 }

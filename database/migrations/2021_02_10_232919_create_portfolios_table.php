@@ -17,7 +17,7 @@ class CreatePortfoliosTable extends Migration
             $table->id();
             $table->string('image', 255);
             $table->string('name',150);
-            $table->string('description',255);
+            $table->text('description');
             $table->date('production_date');
             $table->unsignedBigInteger('category_id')->index();
             $table->timestamps();

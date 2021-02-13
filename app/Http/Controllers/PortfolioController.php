@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Portfolio;
-
+use App\Category;
 class PortfolioController extends Controller
 {
     public function index(){
@@ -18,7 +18,16 @@ class PortfolioController extends Controller
     }
 
     public function show_category($name){
-        $portfolio_category = Portfolio::where("name", $name);
-        return view('front.portfolio-category', compact('portfolio_category'));
+        $category = Category::where("category_name", $name)->get(); //$category = "SELECT * FROM portfolio_categories WHERE category_name = $name"
+        //$category_items = Portfolio::where('category_id', $category->id)->get(); //$items = "SELECT * FROM portfolios WHERE category_id = $category->id"
+        // return view('front.portfolio-category', compact('category_items'));
+        // OR ->
+        return view('front.portfolio-category', compact('category'));
+
+        // $category->category_name;
+        // $category->id;
+        // foreach $category->portfolios as $item
     }
+
+
 }
