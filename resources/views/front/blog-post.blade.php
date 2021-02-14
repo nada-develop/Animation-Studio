@@ -9,17 +9,17 @@
 
 @section ('page-content')
 
-     Banner Header -->
+     <!-- Banner Header -->
     <section class="section section-banner">
         <div class="container">
            <div class="row">
                <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                 <h2 class="title-h2">How to Get More Sales</h2>
+                 <h2 class="title-h2">{{ $blog_item->title }}</h2>
                  <nav aria-label="breadcrumb">
                    <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="/">Home</a></li>
                      <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">How to get more sales</li>
+                     <li class="breadcrumb-item active" aria-current="page">{{ $blog_item->title }}</li>
                    </ol>
                  </nav>
                </div>
@@ -43,8 +43,8 @@
                 </div>
                 <div class="post-info">
                     <div class="post-info-item">
-                        <a class="post-info__link" href=""><i class="zmdi zmdi-account-o"></i>{{$blog_item->author_name}}</a>
-                        <span class="post-info__text"><i class="zmdi zmdi-calendar"></i>Oct 12, 2019{{$blog_item->date}}</span>
+                        <a class="post-info__link" href=""><i class="zmdi zmdi-account-o"></i>{{ $blog_item->author_name }}</a>
+                        <span class="post-info__text"><i class="zmdi zmdi-calendar"></i>Oct 12, 2019{{ $blog_item->date }}</span>
                         <a class="post-info__link" href=""><i class="zmdi zmdi-comment-outline"></i>2 comments</a>
                     </div>
                     <div class="post-info-item">
@@ -52,11 +52,8 @@
                     </div>
                 </div>
                 <div class="box-post">
-                    <h1 class="title-post">{{$blog_item->title}}</h1>
-                    <h1 class="title-post">{{$blog_item->description}}</h1>
-                    <p class="post-description">Mobile app development is the act or process by which a mobile app is developed for mobile devices, enterprise digital assistants or mobile phones.</p>
-                    <p>These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like" experience within a Web browser. Application software developers also must consider a long array of screen sizes, hardware specifications.</p>
-                    <p>Mobile app development is the act or process by which a mobile app is developed for mobile devices, such as personal <a href="">digital assistants</a>, enterprise digital assistants or mobile phones. These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like" experience within a Web browser. Application software developers also must consider a long array of screen sizes, hardware specifications. Mobile app development is the act or process by which a mobile app is developed for mobile devices, such as personal digital assistants, enterprise digital assistants or mobile phones. These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like".</p>
+                    <h1 class="title-post">{{ $blog_item->title }}</h1>
+                    <p class="post-description">{{ $blog_item->description }}</p>
                     <ul class="box-tag">
                         <li class="box-tag-item"><strong>Tags:</strong></li>
                         <li class="box-tag-item"><a class="box-tag__link" href=""> #technology</a></li>
@@ -88,12 +85,12 @@
                         </div>
                     </div>
                     <div class="box-author-item">
-                        <p class="box-author__name">Paul Kemplys</p>
+                        <p class="box-author__name">{{ $blog_item->author_name }}</p>
                         <p class="box-author__description">Paul has been engaged in product promotion and sales growth for many years. His experience is 8 years in this area, he has already managed to reach notable heights.</p>
                         <a href="#" class="btn-text btn-text-img">View all posts</a>
                     </div>
                 </div>
-                <div class="box-comment">
+                {{-- <div class="box-comment">
                     <h2 class="title-post">Comments (2)</h2>
                     <div class="comment">
                         <div class="comment-ava">
@@ -160,7 +157,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> --}}
               </div>
               <div class="col-xl-3 col-md-12 col-sm-12 col-12 sidebar">
                 <div class="sidebar-item">
@@ -231,62 +228,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Video Work -->
-
-    <section class="section section-work">
-        <div class="video-work">
-            <button type="button" class="video-play" data-toggle="modal" data-target="#videoModal">
-                <img class="video-play__img" src="https://via.placeholder.com/945x637" alt="Video">
-            </button>
-        </div>
-        <div class="container">
-            <div class="row">
-              <div class="col-md-12 offset-md-12 col-lg-5 offset-lg-7">
-                <p class="before-title">see us working</p>
-				<h2 class="title-h2">Watch Our Working Process</h2>
-				<p class="after-title">Setting up a good workflow is not so easy. But we can do everything.</p>
-				<p class="description">Every morning in our company begins with hot coffee and a stand-up. Discussion is an important thing in the development process. Thus new ideas and ingenious solutions are born. Then we get to work with renewed vigor and inspiration. We are never bored.</p>
-              </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients -->
-
-    <section class="section section-services">
-        <div class="container">
-
-            <p class="before-title text-center">view more cases</p>
-            <h2 class="title-h2 text-center">Related Works</h2>
-            <p class="text-center after-title">We have many more similar and successful cases. Take a look and you can truly appreciate the level of our skills.</p>
-
-            <div class="box-case box-case--static">
-                <div class="row row-cols-3 row-case">
-                    <div class="col col-case">
-                        <div class="case-item case-1">
-                            <div class="team-info">
-                                <p class="team-name">Clean design concept</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-case">
-                        <div class="case-item case-2">
-                            <div class="team-info">
-                                <p class="team-name">Clean design concept</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-case">
-                        <div class="case-item case-3">
-                            <div class="team-info">
-                                <p class="team-name">Clean design concept</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 @endsection

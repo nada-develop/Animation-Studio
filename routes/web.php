@@ -32,14 +32,13 @@ Route::get('/blog','BlogController@index');
 Route::get('/awards','AwardController@index');
 //loading a single portfolio item
 Route::get('/portfolio/{id}','PortfolioController@show');
-//loading a single blog post 
+//loading a single blog post
 Route::get('/blog/{id}','BlogController@show');
-//loading single award 
+//loading single award
 Route::get('/awards/{id}','AwardController@show');
 //loading portfolio items for a specific category
 Route::get('/portfolio/{name}','PortfolioController@show_category');
 
 
-
-
-
+//---- BACK-END ROUTES
+Route::get('/admin', 'HomeController@dashboard');
