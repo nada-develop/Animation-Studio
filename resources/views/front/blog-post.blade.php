@@ -9,7 +9,7 @@
 
 @section ('page-content')
 
-    <!-- Banner Header -->
+     Banner Header -->
     <section class="section section-banner">
         <div class="container">
            <div class="row">
@@ -17,8 +17,8 @@
                  <h2 class="title-h2">How to Get More Sales</h2>
                  <nav aria-label="breadcrumb">
                    <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                     <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+                     <li class="breadcrumb-item"><a href="/">Home</a></li>
+                     <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
                      <li class="breadcrumb-item active" aria-current="page">How to get more sales</li>
                    </ol>
                  </nav>
@@ -43,8 +43,8 @@
                 </div>
                 <div class="post-info">
                     <div class="post-info-item">
-                        <a class="post-info__link" href=""><i class="zmdi zmdi-account-o"></i>by Paul Kemplys</a>
-                        <span class="post-info__text"><i class="zmdi zmdi-calendar"></i>Oct 12, 2019</span>
+                        <a class="post-info__link" href=""><i class="zmdi zmdi-account-o"></i>{{$blog_item->author_name}}</a>
+                        <span class="post-info__text"><i class="zmdi zmdi-calendar"></i>Oct 12, 2019{{$blog_item->date}}</span>
                         <a class="post-info__link" href=""><i class="zmdi zmdi-comment-outline"></i>2 comments</a>
                     </div>
                     <div class="post-info-item">
@@ -52,7 +52,8 @@
                     </div>
                 </div>
                 <div class="box-post">
-                    <h1 class="title-post">Do You Really Want to Encrease Your Sales?</h1>
+                    <h1 class="title-post">{{$blog_item->title}}</h1>
+                    <h1 class="title-post">{{$blog_item->description}}</h1>
                     <p class="post-description">Mobile app development is the act or process by which a mobile app is developed for mobile devices, enterprise digital assistants or mobile phones.</p>
                     <p>These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like" experience within a Web browser. Application software developers also must consider a long array of screen sizes, hardware specifications.</p>
                     <p>Mobile app development is the act or process by which a mobile app is developed for mobile devices, such as personal <a href="">digital assistants</a>, enterprise digital assistants or mobile phones. These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like" experience within a Web browser. Application software developers also must consider a long array of screen sizes, hardware specifications. Mobile app development is the act or process by which a mobile app is developed for mobile devices, such as personal digital assistants, enterprise digital assistants or mobile phones. These applications can be pre-installed on phones during manufacturing platforms, or delivered as web applications using server-side or client-side processing (e.g., JavaScript) to provide an "application-like".</p>

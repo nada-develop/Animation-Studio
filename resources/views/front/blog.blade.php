@@ -31,8 +31,38 @@ Blog
        </div>
     </section>
 
-     <!-- Blog -->
+
+
+
      <section class="section section-blog section-blog--full">
+        <div class="container">
+
+            <div class="row-blog">
+    @foreach ($blog_list as $blogs)
+                <div class="col-post">
+                    <div class="thumb-blog thumb-blog-1">
+                        <div class="post-date">{{$blogs->date}}</div>
+                    </div>
+                    <h3 class="title-h3 line-clamp">
+                        <a href="blog-single.html">{{$blogs->title}}</a>
+                    </h3>
+                    <p class="description line-clamp">{{$blogs->description}}</p>
+                    <a class="btn-text btn-text-img" href="/blog/{{$blogs->id}}">Read more</a>
+                </div>
+    @endforeach
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+     <!--<section class="section section-blog section-blog--full">
         <div class="container">
 
             <div class="row-blog">
@@ -98,7 +128,7 @@ Blog
                 </div>
             </div>
 
-            <!-- Pagination -->
+
             <nav aria-label="">
                 <ul class="pagination pagination-lg">
                   <li class="page-item active">
@@ -109,6 +139,6 @@ Blog
                 </ul>
             </nav>
         </div>
-    </section>
+    </section>-->
 
 @endsection
