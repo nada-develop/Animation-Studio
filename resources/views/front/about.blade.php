@@ -16,7 +16,7 @@ About Us
                  <h2 class="title-h2">About Us</h2>
                  <nav aria-label="breadcrumb">
                    <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                      <li class="breadcrumb-item active" aria-current="page">About Us</li>
                    </ol>
                  </nav>
@@ -25,8 +25,10 @@ About Us
         </div>
         <div class="section-banner__box">
            <div class="section-banner__thumb">
-               <img class="section-banner__img" src="https://via.placeholder.com/960x290" alt="Image Banner">
+
+               {{-- <img class="section-banner__img" src="{{ asset('storage/about-img' .  ) }}" alt="Image Banner"> --}}
            </div>
+
        </div>
     </section>
 
@@ -37,10 +39,10 @@ About Us
 				<div class="col-xl-5 col-md-12 col-sm-12 col-12">
                     <p class="before-title">we are special</p>
 					<h2 class="title-h2">We are Creative And Professional Agency</h2>
-					<p class="after-title">Our digital company has been developing products for 15 years.</p>
-					<p class="text-description">We’ve got a lot of awards for our work and develop applications that became popular in the world. We try not to miss important details in each area.</p>
-                    <p class="text-description">Every morning in our company begins with hot coffee and a stand-up. Discussion is an important thing in the development process. Thus new ideas and ingenious solutions are born. Then we get to work with renewed vigor and inspiration. We are never bored.</p>
-                    <p class="text-description">We’ve got a lot of awards for our work and develop applications that became popular in the world. We try not to miss important details in each area.</p>
+                    @foreach ($aboutus as $item)
+                    <p class="before-title">{{ $item->title }}</p>
+					<p class="text-description">{{ $item->description }}</p>
+                    @endforeach
 				</div>
 				<div class="col-xl-6 col-md-12 col-sm-12 col-12 col-photo">
 					<div class="box-about">
@@ -100,7 +102,7 @@ About Us
         </div>
         <div class="box-action">
             <div class="thumb-action">
-                <img class="thumb-action-img" src="https://via.placeholder.com/1000x1121" alt="Image Newsletter">
+                {{-- <img class="thumb-action-img" src="{{ asset('storage/slide-img' . $slide->slide_img) }}" alt="Image Newsletter"> --}}
             </div>
         </div>
     </section>
@@ -199,7 +201,7 @@ About Us
         </div>
         <div class="box-newsletter">
             <div class="thumb-newsletter">
-                <img class="thumb-newsletter-img" src="https://via.placeholder.com/556x572" alt="Image Newsletter">
+                {{-- <img class="thumb-newsletter-img" src="{{  }}" alt="Image Newsletter"> --}}
             </div>
         </div>
     </section>
@@ -207,17 +209,16 @@ About Us
     <!-- Team Carousel -->
     <section class="section section-team">
         <div class="container">
-            <p class="before-title text-center">our team</p>
-            <h2 class="title-h2 text-center">Experts In Their Field</h2>
-            <p class="text-center after-title">The best professionals will work on your product.<br>We can safely say that success is guaranteed to your business.</p>
+            <p class="before-title text-center"> Our Latest Products</p>
         </div>
         <div class="owl-carousel team-carousel text-center">
+            @foreach ($portfolios as $portfolio)
             <div class="team-carousel-item team-carousel-1">
                 <div class="team-info">
                     <p class="team-name">Aleksander Firson</p>
                     <ul class="team-social">
                         <li class="team-social-item">
-                            <a href="" class="team-social-link" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="/portfolio/{{ $portfolio->id }}" class="team-social-link" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
                         </li>
                         <li class="team-social-item">
                             <a href="" class="team-social-link" target="_blank"><i class="zmdi zmdi-linkedin"></i></a>
@@ -225,7 +226,8 @@ About Us
                     </ul>
                 </div>
             </div>
-            <div class="team-carousel-item team-carousel-2">
+            @endforeach
+            {{-- <div class="team-carousel-item team-carousel-2">
                 <div class="team-info">
                     <p class="team-name">Alex Freeman</p>
                     <ul class="team-social">
@@ -408,7 +410,7 @@ About Us
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 

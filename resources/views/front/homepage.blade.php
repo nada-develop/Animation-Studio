@@ -11,6 +11,7 @@ Home
 
     <!-- Banner Carousel -->
     <div class="owl-carousel banner-carousel">
+        @foreach ($slides as $slide)
         <div class="banner-carousel-item">
             <div class="container">
                 <div class="row">
@@ -23,51 +24,14 @@ Home
                     </div>
                   </div>
             </div>
-            <span class="carousel-number">.01</span>
+            <span class="carousel-number">{{ $slide->id }}</span>
             <div class="box-banner">
                 <div class="thumb-banner">
-                    <img class="thumb-banner-img" src="https://via.placeholder.com/1070x880" alt="Image Banner">
+                    {{-- <img class="thumb-banner-img" src="{{ asset('storage/home-img' . $slide->slide_image) }}" alt="Image Banner"> --}}
                 </div>
             </div>
         </div>
-        <div class="banner-carousel-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                      <h1 class="title-h1">
-                        Creative Web Design Studio
-                      </h1>
-                      <p class="description">We create new technologies for your business thanks to our wonderful team of professionals. Together we can reach new heights.</p>
-                      <a href="" class="btn btn-primary">Learn more</a>
-                    </div>
-                  </div>
-            </div>
-            <span class="carousel-number">.02</span>
-            <div class="box-banner">
-                <div class="thumb-banner">
-                    <img class="thumb-banner-img" src="https://via.placeholder.com/1070x880" alt="Image Banner">
-                </div>
-            </div>
-        </div>
-        <div class="banner-carousel-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                      <h1 class="title-h1">
-                        Creative Web Design Studio
-                      </h1>
-                      <p class="description">We create new technologies for your business thanks to our wonderful team of professionals. Together we can reach new heights.</p>
-                      <a href="" class="btn btn-primary">Learn more</a>
-                    </div>
-                  </div>
-            </div>
-            <span class="carousel-number">.03</span>
-            <div class="box-banner">
-                <div class="thumb-banner">
-                    <img class="thumb-banner-img" src="https://via.placeholder.com/1070x880" alt="Image Banner">
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <!-- About Us -->
@@ -77,14 +41,11 @@ Home
 				<div class="col-xl-6 col-md-6 col-sm-12 col-12">
                     <div class="img-about">
                         <div class="img-about-item">
+                            @foreach ($about as $item)
                             <div class="thumb-back">
-                                <img class="thumb-back-img" src="https://via.placeholder.com/300x350" alt="Image Back">
+                                {{-- <img class="thumb-back-img" src="{{ asset('storage/home-img' . $item->image) }}" alt="Image Back"> --}}
                             </div>
-                        </div>
-                        <div>
-                            <div class="thumb-front wow fadeInUp" data-wow-duration="1000ms">
-                                <img class="thumb-front-img" src="https://via.placeholder.com/330x437" alt="Image Front">
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -92,8 +53,9 @@ Home
 				<div class="col-xl-5 col-md-5 col-sm-12 col-12">
 					<p class="before-title scnd">about us</p>
 					<h2 class="title-h2">We are the Creative Digital Team</h2>
-					<p class="after-title">Our digital company has been developing products for 15 years.</p>
-					<p class="description">We’ve got a lot of awards for our work and develop applications that became popular in the world. We try not to miss important details in each area.</p>
+                    @foreach ($about as $item)
+					<p class="text-description">{{ $item->description }}</p>
+                    @endforeach
                     <button type="button" class="btn-play" data-toggle="modal" data-target="#videoModal">Watch video</button>
 				</div>
 			  </div>
@@ -101,7 +63,7 @@ Home
 	</section>
 
     <!-- Count -->
-    <section class="section section-count">
+    {{-- <section class="section section-count">
 		<div class="container text-center box-count">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-count">
             <div class="col mb-2">
@@ -122,10 +84,10 @@ Home
             </div>
             </div>
         </div>
-	</section>
+	</section> --}}
 
     <!-- Get a Free -->
-	<section class="section section-action">
+	{{-- <section class="section section-action">
         <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -140,7 +102,7 @@ Home
                 <img class="thumb-action-img" src="https://via.placeholder.com/1000x1121" alt="Image Newsletter">
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Services -->
     <section class="section section-services">
@@ -178,7 +140,7 @@ Home
             <div class="row justify-content-end portfolio">
                 <div class="col-md-12 col-xl-4">
                     <p class="before-title">recent projects</p>
-                    <h2 class="title-h2">Check Our Latest&nbsp;Cases</h2>
+                    <h2 class="title-h2">Check Our Latest&nbsp;Products</h2>
                     <p class="description">We always try to implement our creative ideas at the highest level. You can see it by looking at our portfolio.</p>
                     <a href="portfolio.html" class="btn btn-primary">View all</a>
                 </div>
@@ -186,33 +148,35 @@ Home
         </div>
         <div class="box-case">
             <div class="row row-cols-3 row-case">
+                @foreach ($portfolios as $potfolio)
                 <div class="col col-case">
                     <div class="case-item case-1">
                         <div class="team-info">
-                            <p class="team-name"><a href="portfolio-details.html" title="">Clean design concept</a></p>
+                            <p class="team-name"><a href="/potfolio/{{ $potfolio->id }}" title="">{{ $potfolio->name }}</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col col-case">
+                @endforeach
+                {{-- <div class="col col-case">
                     <div class="case-item case-2">
                         <div class="team-info">
                             <p class="team-name"><a href="portfolio-details.html" title="">Clean design concept</a></p>
                         </div>
                     </div>
-                </div>
-                <div class="col col-case">
+                </div> --}}
+                {{-- <div class="col col-case">
                     <div class="case-item case-3">
                         <div class="team-info">
                             <p class="team-name"><a href="portfolio-details.html" title="">Clean design concept</a></p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
 
     <!-- Newsletter -->
-	<section class="section section-newsletter">
+	{{-- <section class="section section-newsletter">
         <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -236,10 +200,10 @@ Home
                 <img class="thumb-newsletter-img" src="https://via.placeholder.com/556x572" alt="Image Newsletter">
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Team Carousel -->
-    <section class="section section-team">
+    {{-- <section class="section section-team">
         <div class="container">
             <p class="before-title text-center">our team</p>
             <h2 class="title-h2 text-center">Experts In Their Field</h2>
@@ -444,7 +408,7 @@ Home
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Blog -->
     <section class="section section-blog">
@@ -453,41 +417,21 @@ Home
 
             <p class="before-title text-center">develop yourself - read more</p>
              <h2 class="title-h2 text-center">Resent News And Articles</h2>
-
             <div class="row-blog">
+                @foreach ($blogs as $blog)
                 <div class="col-post">
                     <div class="thumb-blog thumb-blog-1">
-                        <div class="post-date">Oct 12, 2019</div>
+                        <div class="post-date">{{ $blog->date}}</div>
                     </div>
                     <h3 class="title-h3 line-clamp">
-                        <a href="blog-single.html">How to create an amazing design for your site without</a>
+                        <a href="/blog/{{ $blog->id }}">{{ $blog->title }}</a>
                     </h3>
-                    <p class="description line-clamp">Have you ever thought about your own site with clean and modern design</p>
-                    <a class="btn-text btn-text-img" href="blog-single.html">Read more</a>
+                    <p class="description line-clamp">{{ $blog->description }}</p>
+                    <a class="btn-text btn-text-img" href="/blog/{{ $blog->id }}">Read More ..</a>
                 </div>
-                <div class="col-post col-post-center">
-                    <div class="thumb-blog thumb-blog-2">
-                        <div class="post-date">Oct 12, 2019</div>
-                    </div>
-                    <h3 class="title-h3 line-clamp">
-                        <a href="blog-single.html">How to create an amazing design for your site without</a>
-                    </h3>
-                    <p class="description line-clamp">Have you ever thought about your own site with clean and modern design</p>
-                    <a class="btn-text btn-text-img" href="blog-single.html">Read more</a>
-                </div>
-                <div class="col-post">
-                    <div class="thumb-blog thumb-blog-3">
-                        <div class="post-date">Oct 12, 2019</div>
-                    </div>
-                    <h3 class="title-h3 line-clamp">
-                        <a href="blog-single.html">How to create an amazing design for your site without</a>
-                    </h3>
-                    <p class="description line-clamp">Have you ever thought about your own site with clean and modern design company</p>
-                    <a class="btn-text btn-text-img" href="blog-single.html">Read more</a>
-                </div>
-            </div>
-        </div>
-
+               @endforeach
+          </div>
+       </div>
     </section>
 
 @endsection
