@@ -41,4 +41,44 @@ Route::get('/portfolio/{name}','PortfolioController@show_category');
 
 
 //---- BACK-END ROUTES
+
+//------HomeControlle ROUTES
 Route::get('/admin', 'HomeController@dashboard');
+Route::get('/auth_login', 'HomeController@index');
+//loading contat form with info
+Route::put('/admin/pages/contact/edit', 'HomeController@edit_contact');
+//updat contact info
+Route::get('/admin/pages/contact', 'HomeController@update_contact');
+//------BlogController ROUTES
+//display all blogs
+Route::get('/admin/blog', 'BlogController@all');
+//add new Blog
+Route::get('/admin/blog/create', 'BlogController@create');
+//storing creation
+Route::post('/admin/blog', 'BlogController@store');
+//show Blog Data to edit
+Route::get('/admin/blog/blog{id}', 'BlogController@edit');
+
+Route::put('/admin/blog/blog{id}', 'BlogController@update');
+// Route::get('/admin/blog/blog{id}', 'BlogController@delete');
+
+
+// AwardControler ROUTES
+//display all awards
+Route::get('/admin/award', 'AwardController@all');
+
+Route::put('/admin/award/create', 'AwardController@create');
+
+Route::put('/admin/award', 'AwardController@store');
+
+Route::put('/admin/award/{id}/edit', 'AwardController@edit');
+
+Route::put('/admin/award/{id}', 'AwardController@update');
+
+
+
+
+
+
+
+
