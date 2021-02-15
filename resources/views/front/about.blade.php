@@ -66,7 +66,7 @@ About Us
 	</section>
 
     <!-- Count -->
-    <section class="section section-count">
+    {{-- <section class="section section-count">
 		<div class="container text-center box-count">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-count">
             <div class="col mb-2">
@@ -87,10 +87,10 @@ About Us
             </div>
             </div>
         </div>
-	</section>
+	</section> --}}
 
     <!-- Get a Free -->
-	<section class="section section-action">
+	{{-- <section class="section section-action">
         <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -102,13 +102,13 @@ About Us
         </div>
         <div class="box-action">
             <div class="thumb-action">
-                {{-- <img class="thumb-action-img" src="{{ asset('storage/slide-img' . $slide->slide_img) }}" alt="Image Newsletter"> --}}
+                <img class="thumb-action-img" src="{{ asset('storage/slide-img' . $slide->slide_img) }}" alt="Image Newsletter">
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Services -->
-    <section class="section section-feedback">
+    {{-- <section class="section section-feedback">
         <div class="container">
 
             <p class="before-title">happy clients say</p>
@@ -177,10 +177,10 @@ About Us
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Newsletter -->
-	<section class="section section-newsletter">
+	{{-- <section class="section section-newsletter">
         <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -201,13 +201,13 @@ About Us
         </div>
         <div class="box-newsletter">
             <div class="thumb-newsletter">
-                {{-- <img class="thumb-newsletter-img" src="{{  }}" alt="Image Newsletter"> --}}
+                <img class="thumb-newsletter-img" src="{{  }}" alt="Image Newsletter">
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Team Carousel -->
-    <section class="section section-team">
+    {{-- <section class="section section-team">
         <div class="container">
             <p class="before-title text-center"> Our Latest Products</p>
         </div>
@@ -227,7 +227,7 @@ About Us
                 </div>
             </div>
             @endforeach
-            {{-- <div class="team-carousel-item team-carousel-2">
+            <div class="team-carousel-item team-carousel-2">
                 <div class="team-info">
                     <p class="team-name">Alex Freeman</p>
                     <ul class="team-social">
@@ -410,12 +410,12 @@ About Us
                         </li>
                     </ul>
                 </div>
-            </div> --}}
+            </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Reasons Why -->
-    <section class="section section-reason">
+    {{-- <section class="section section-reason">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-md-12 col-sm-12 col-12">
@@ -451,6 +451,6 @@ About Us
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection

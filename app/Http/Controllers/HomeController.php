@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Contact;
+use App\About;
 class HomeController extends Controller
 {
     /**
@@ -29,44 +30,45 @@ class HomeController extends Controller
     public function dashboard(){
         return view('back.dashboard');
     }
+
+    public function indexPages(){
+        return view('back.pages');
+    }
+
     //contact methods
     public function edit_contact(){
-     $company_info = Contact::all();
-        return view('back.contact.edit',compact('company_info'));
+        $contact_info = Contact::find(1);
+        return view('back.edit-contact',compact('contact_info'));
     }
 
     public function update_contact(){
-        // سؤال هنا في
-        $contact_info = Contact::find($id);
-        $contact_info->phone = request('cphone');
-        $contact_info->mobile1 = request('cmobile1');
-        $contact_info->mobile2 = request('cmobile2');
-        $contact_info->contact_email = request('cmail');
-        $contact_info->facebook_link = request('face_link');
-        $contact_info->instagram_link = request('insta_link');
+        $contact_info = Contact::find(1);
+        $contact_info->phone = request('phone');
+        $contact_info->mobile1 = request('mobile1');
+        $contact_info->mobile2 = request('mobile2');
+        $contact_info->contact_email = request('contact_email');
+        $contact_info->facebook_link = request('facebook_link');
+        $contact_info->instagram_link = request('instagram_link');
         $contact_info->google_lat = request('google_lat');
         $contact_info->google_long = request('google_long');
         $contact_info->google_zoom = request('google_zoom');
-        $contact_info->address = request('caddress');
+        $contact_info->address = request('address');
         $contact_info->save();
-        // return redirect('/');
-
+        return redirect('/admin/pages');
     }
 
-    // public function store_contact(){
-    //     $leader_contact = new Contact;
-    //    $leader_contact->phone =  request('cname');
-    //    $leader_contact->mobile1 =  request('cphone');
-    //    $leader_contact->mobile2 =  request('caddress');
-    //    $leader_contact->contact_email =  request('cmail');
-    //    $leader_contact->city_id =  request('city');
-    //    $leader_contact->save();
-    //    //دي داله زي بالضبط الheader(location:)
-    //    //ودي دايما بتبعت ب get
-    //    return redirect('/customers');
-    // }
+    //About Methods
+    public function edit_about(){
+        $about_info = About::all();
+        return view('back.edit-about',compact('about_info'));
+    }
 
-
-
-
+    public function update_about(){
+        $all = About::all();
+        foreach($all as $one){
+            $one->description = request(str_replace(" ", "", strtolower($one->title)));
+            $one->save();
+        }
+        return redirect('/admin/pages');
+    }
 }

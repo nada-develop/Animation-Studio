@@ -44,23 +44,24 @@ Contact
                <img src="img/icons/call.svg" alt="">
                <h3 class="title-h3">Call us</h3>
                <ul class="col-contact__list">
-                   <li class="col-contact__list-item"><span>Phone:</span> +1 6547 78 98</li>
-                   <li class="col-contact__list-item"><span>Fax:</span> +1 6547 88 99</li>
+                   <li class="col-contact__list-item"><span>Phone:</span> {{ $details->phone }}</li>
+                   <li class="col-contact__list-item"><span>Mob Num:</span> {{ $details->mobile1 }}</li>
+                   <li class="col-contact__list-item"><span>Mob Num 2:</span> {{ $details->mobile2 }}</li>
                </ul>
            </div>
            <div class="col-contact">
                <img src="img/icons/speech-bubble.svg" alt="">
                <h3 class="title-h3">Chat us</h3>
                <ul class="col-contact__list">
-                   <li class="col-contact__list-item"><span>Skype:</span> desart_agency</li>
-                   <li class="col-contact__list-item"><span>Telegram:</span> @desart</li>
+                   <li class="col-contact__list-item"><span>Facebook:</span> <a href="{{ $details->facebook_link }}">Visit Page</a></li>
+                   <li class="col-contact__list-item"><span>Instagram:</span> <a href="{{ $details->instagram_link }}">Visit Account</a></li>
                </ul>
            </div>
            <div class="col-contact">
                <img src="img/icons/location.svg" alt="">
                <h3 class="title-h3">Visit us</h3>
                <ul class="col-contact__list">
-                   <li class="col-contact__list-item"><span>Address:</span> 555 W Madison St, Chicago, IL 60661, USA</li>
+                   <li class="col-contact__list-item"><span>Address:</span> {{ $details->address }}</li>
                </ul>
            </div>
            <div class="col-contact">

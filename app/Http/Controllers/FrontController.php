@@ -31,7 +31,7 @@ class FrontController extends Controller
         }
 
         public function contact(){
-            $details = Contact::all();
+            $details = Contact::find(1);
             return view ('front.contact',compact('details'));
         }
 }

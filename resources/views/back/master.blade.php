@@ -16,8 +16,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{ asset('back/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('back/assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
+    @yield('page-styles')
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>
@@ -65,8 +64,7 @@
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{ asset('back/plugins/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('back/assets/js/dashboard/dash_1.js') }}"></script>
+    @yield('page-scripts')
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 </body>

@@ -4,6 +4,11 @@
     Dashboard
 @endsection
 
+@section('page-styles')
+    <link href="{{ asset('back/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('back/assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('page-content')
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
@@ -432,4 +437,9 @@
 
         </div>
     </div>
+@endsection
+
+@section('page-scripts')
+    <script src="{{ asset('back/plugins/apex/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('back/assets/js/dashboard/dash_1.js') }}"></script>
 @endsection

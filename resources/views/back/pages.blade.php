@@ -1,7 +1,7 @@
 @extends('back.master')
 
 @section('page-title')
-    Manage Blog Posts
+    Manage Public Pages
 @endsection
 
 @section('page-styles')
@@ -17,7 +17,7 @@
 
             <div class="page-header">
                 <div class="page-title">
-                    <h3>Manage Blog Posts</h3>
+                    <h3>Manage Public Pages</h3>
                 </div>
             </div>
 
@@ -29,33 +29,27 @@
                             <table id="zero-config" class="table table-hover" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Title</th>
-                                        <th>Author Name</th>
-                                        <th>Date</th>
-                                        <th>Category</th>
+                                        <th>Name</th>
+                                        <th class="no-content"></th>
                                         <th class="no-content"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($blog_list as $post)
                                     <tr>
-                                        <th>{{ $post->image }}</th>
-                                        <th>{{ $post->title }}</th>
-                                        <th>{{ $post->author_name }}</th>
-                                        <th>{{ $post->date }}</th>
-                                        <th>{{ $post->category_id }}</th>
-                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary">Edit</a></td>
+                                        <td>About</td>
+                                        <td><a href="/about" class="btn btn-secondary" target="_blank">View</a></td>
+                                        <td><a href="/admin/pages/about/edit" class="btn btn-primary">Edit</a></td>
                                     </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td>Contact</td>
+                                        <td><a href="/contact" class="btn btn-secondary" target="_blank">View</a></td>
+                                        <td><a href="/admin/pages/contact/edit" class="btn btn-primary">Edit</a></td>
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Title</th>
-                                        <th>Author Name</th>
-                                        <th>Date</th>
-                                        <th>Category</th>
+                                        <th>Name</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </tfoot>
