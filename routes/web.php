@@ -68,15 +68,6 @@ Route::put('/admin/blog/{id}', 'BlogController@update');
 
 
 
-
-
-
-
-
-
-
-
-
 // AwardControler ROUTES
 //display all awards
 Route::get('/admin/award', 'AwardController@all');
@@ -91,4 +82,22 @@ Route::put('/admin/award/{id}', 'AwardController@update');
 
 
 
+
+
+
+
+
+
+
+
+//--Portfolio routes--\\
+Route::get('/admin/portfolio', 'PortfolioController@index_back');
+
+Route::get('/admin/portfolio/create', 'PortfolioController@create');
+
+Route::post('/admin/portfolio', 'PortfolioController@store');
+
+Route::get('/admin/portfolio/{id}/edit', 'PortfolioController@edit');
+
+Route::put('/admin/portfolio/{id}', 'PortfolioController@update');
 
