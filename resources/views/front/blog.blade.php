@@ -44,7 +44,7 @@ Blog
                         <div class="post-date">{{$blogs->date}}</div>
                     </div>
                     <h3 class="title-h3 line-clamp">
-                        <a href="blog-single.html">{{$blogs->title}}</a>
+                        <a href="/blog/{{$blogs->id}}">{{$blogs->title}}</a>
                     </h3>
                     <p class="description line-clamp">{{$blogs->description}}</p>
                     <a class="btn-text btn-text-img" href="/blog/{{$blogs->id}}">Read more</a>
