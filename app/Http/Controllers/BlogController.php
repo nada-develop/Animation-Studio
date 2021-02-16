@@ -42,7 +42,8 @@ class BlogController extends Controller
 
     public function edit($id){
         $blog_item = Blog::find($id);
-        return view('back.blog.edit',compact('blog_item'));
+        $categories = BlogCategory::all();
+        return view('back.blog.edit',compact('blog_item', 'categories'));
     }
 
     public function update($id){

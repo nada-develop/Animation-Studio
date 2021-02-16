@@ -50,10 +50,15 @@
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="date" value="{{ $blog_item->date }}">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label for="exampleFormControlInput2">Category ID</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput2" name="cat_id" value="{{ $blog_item->category_id }}">
+                                    <label for="exampleFormControlInput2">Category</label>
+                                    <select name="cat_id" id="cat_id" class="form-control" >
+                                        @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $category->id ==  $blog_item->category_id ? 'selected' : ''}}>{{ $category->category_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <input type="submit" value="Save" name="time" class="mt-4 mb-4 btn btn-primary">
+                                <a href="/admin/blog" class="btn btn-secondary">Back</a>
                             </form>
                         </div>
                     </div>

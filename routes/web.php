@@ -14,79 +14,48 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// authentication
+// Authentication
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-//----frontendRoutes
-//loading the homepage
-Route::get('/','FrontController@homepage');
-//loading the aboutpage
-Route::get('/about','FrontController@about');
-//loading the contactpage
-Route::get('/contact','FrontController@contact');
-//loading portfolio items
-Route::get('/portfolio','PortfolioController@index');
-//loading a single portfolio item
-Route::get('/portfolio/{id}','PortfolioController@show');
-//loading portfolio items for a specific category
-Route::get('/portfolio/{name}','PortfolioController@show_category');
-//loading blog posts
-Route::get('/blog','BlogController@index');
-//loading a single blog post
-Route::get('/blog/{id}','BlogController@show');
-//loading awards
-Route::get('/award','AwardController@index');
-//loading single award
-Route::get('/award/{id}','AwardController@show');
+//---- FRONT-END ROUTES
+Route::get('/','FrontController@homepage'); //loading the homepage
+Route::get('/about','FrontController@about'); //loading the aboutpage
+Route::get('/contact','FrontController@contact'); //loading the contactpage
+Route::get('/portfolio','PortfolioController@index'); //loading portfolio items
+Route::get('/portfolio/{id}','PortfolioController@show'); //loading a single portfolio item
+Route::get('/portfolio/{name}','PortfolioController@show_category'); //loading portfolio items for a specific category
+Route::get('/blog','BlogController@index'); //loading blog posts
+Route::get('/blog/{id}','BlogController@show'); //loading a single blog post
+Route::get('/award','AwardController@index'); //loading awards
+Route::get('/award/{id}','AwardController@show'); //loading single award
 
 
 //---- BACK-END ROUTES
-
-//------HomeControlle ROUTES
+//------Basic Pages ROUTES
 Route::get('/admin', 'HomeController@dashboard');
 Route::get('/admin/pages', 'HomeController@indexPages');
-Route::get('/admin/award', 'AwardController@all');
+Route::get('/admin/pages/contact/edit', 'HomeController@edit_contact')->middleware('auth'); // loading contact form with info
+Route::put('/admin/pages/contact', 'HomeController@update_contact')->middleware('auth'); // update contact info
+Route::get('/admin/pages/about/edit', 'HomeController@edit_about')->middleware('auth'); // loading about with info
+Route::put('/admin/pages/about', 'HomeController@update_about')->middleware('auth'); // update about
 
-// loading contact form with info
-Route::get('/admin/pages/contact/edit', 'HomeController@edit_contact');
-// update contact info
-Route::put('/admin/pages/contact', 'HomeController@update_contact');
-// loading about with info
-Route::get('/admin/pages/about/edit', 'HomeController@edit_about');
-// update about
-Route::put('/admin/pages/about', 'HomeController@update_about');
-
-//------BlogController ROUTES
-//display all blogs
-Route::get('/admin/blog', 'BlogController@index_back');
-//add new Blog
-Route::get('/admin/blog/create', 'BlogController@create');
-//storing creation
-Route::post('/admin/blog', 'BlogController@store');
-//show Blog Data to edit
-Route::get('/admin/blog/{id}/edit', 'BlogController@edit');
-Route::put('/admin/blog/{id}', 'BlogController@update');
+//------ BlogController ROUTES
+Route::get('/admin/blog', 'BlogController@index_back')->middleware('auth'); //display all blogs
+Route::get('/admin/blog/create', 'BlogController@create')->middleware('auth'); //add new Blog
+Route::post('/admin/blog', 'BlogController@store')->middleware('auth'); //storing creation
+Route::get('/admin/blog/{id}/edit', 'BlogController@edit')->middleware('auth'); //show Blog Data to edit
+Route::put('/admin/blog/{id}', 'BlogController@update')->middleware('auth');
 // Route::get('/admin/blog/blog{id}', 'BlogController@delete');
 
-// AwardControler ROUTES
-//display all awards
-Route::get('/admin/award', 'AwardController@all');
-Route::get('/admin/award/create', 'AwardController@create');
-Route::post('/admin/award', 'AwardController@store');
-Route::get('/admin/award/{id}/edit', 'AwardController@edit');
-Route::put('/admin/award/{id}', 'AwardController@update');
+//------ AwardControler ROUTES
+Route::get('/admin/award', 'AwardController@all')->middleware('auth');
+Route::get('/admin/award/create', 'AwardController@create')->middleware('auth');
+Route::post('/admin/award', 'AwardController@store')->middleware('auth');
+Route::get('/admin/award/{id}/edit', 'AwardController@edit')->middleware('auth');
+Route::put('/admin/award/{id}', 'AwardController@update')->middleware('auth');
 
-
-
-
-//--Portfolio routes--\\
-Route::get('/admin/portfolio', 'PortfolioController@index_back');
-
-Route::get('/admin/portfolio/create', 'PortfolioController@create');
-
-Route::post('/admin/portfolio', 'PortfolioController@store');
-
-Route::get('/admin/portfolio/{id}/edit', 'PortfolioController@edit');
-
-Route::put('/admin/portfolio/{id}', 'PortfolioController@update');
-
+//------ PortfolioController ROUTES
+Route::get('/admin/portfolio', 'PortfolioController@index_back')->middleware('auth');
+Route::get('/admin/portfolio/create', 'PortfolioController@create')->middleware('auth');
+Route::post('/admin/portfolio', 'PortfolioController@store')->middleware('auth');
+Route::get('/admin/portfolio/{id}/edit', 'PortfolioController@edit')->middleware('auth');
+Route::put('/admin/portfolio/{id}', 'PortfolioController@update')->middleware('auth');

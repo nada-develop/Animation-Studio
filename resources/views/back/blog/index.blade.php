@@ -26,6 +26,7 @@
                 <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                     <div class="widget-content widget-content-area br-6">
                         <div class="table-responsive mb-4 mt-4">
+                            <a href="/admin/blog/create" class="btn btn-success mb-4">New Post</a>
                             <table id="zero-config" class="table table-hover" style="width:100%">
                                 <thead>
                                     <tr>
@@ -44,8 +45,8 @@
                                         <th>{{ $post->title }}</th>
                                         <th>{{ $post->author_name }}</th>
                                         <th>{{ $post->date }}</th>
-                                        <th>{{ $post->category_id }}</th>
-                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary mr-2">Edit</a><a href="/admin/blog/create" class="btn btn-primary ">New</a></td>
+                                        <th>{{ $post->category->category_name }}</th>
+                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary mr-2">Edit</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

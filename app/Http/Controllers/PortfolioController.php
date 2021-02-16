@@ -22,38 +22,43 @@ class PortfolioController extends Controller
         return view('front.portfolio-category', compact('category'));
 
     }
-        //--backend--\\
-        public function create(){
-            return view('back.portfolio.new');
-        }
 
-        public function store(){
+    //--backend--\\
+    public function index_back(){
+        $portfolio_list = Portfolio::all();
+        return view('back.portfolio.index', compact('portfolio_list'));
+    }
 
-           $new_portfolio = new Portfolio();
-           $new_portfolio->title =  request('title');
-           $new_portfolio->description = request('desc');
-           $new_portfolio->author_name = request('author');
-           $new_portfolio->date = request('date');
-           $new_portfolio->category_id = request('cat_id');
-           $new_portfolio->save();
-            return redirect('/admin/portfolio');
-        }
+    public function create(){
+        return view('back.portfolio.new');
+    }
 
-        public function edit($id){
-            $portfolio_item = Portfolio::find($id);
-            return view('back.portfolio.edit',compact('portfolio_item'));
-        }
+    public function store(){
+        $new_portfolio = new Portfolio();
+        $new_portfolio->title =  request('title');
+        $new_portfolio->description = request('desc');
+        $new_portfolio->author_name = request('author');
+        $new_portfolio->date = request('date');
+        $new_portfolio->category_id = request('cat_id');
+        $new_portfolio->save();
+        return redirect('/admin/portfolio');
+    }
 
-        public function update($id){
-           $update_portfolio = Portfolio::find($id);
-           $update_portfolio->name =  request('name');
-           $update_portfolio->description = request('desc');
-           $update_portfolio->author_name = request('author');
-           $update_portfolio->date = request('date');
-           $update_portfolio->category_id = request('cat_id');
-           $update_portfolio->save();
-           return redirect('/admin/portfolio');
-        }
+    public function edit($id){
+        $portfolio_item = Portfolio::find($id);
+        return view('back.portfolio.edit',compact('portfolio_item'));
+    }
+
+    public function update($id){
+        $update_portfolio = Portfolio::find($id);
+        $update_portfolio->name =  request('name');
+        $update_portfolio->description = request('desc');
+        $update_portfolio->author_name = request('author');
+        $update_portfolio->date = request('date');
+        $update_portfolio->category_id = request('cat_id');
+        $update_portfolio->save();
+        return redirect('/admin/portfolio');
+    }
 
 }
 

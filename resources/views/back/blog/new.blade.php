@@ -1,7 +1,7 @@
 @extends('back.master')
 
 @section('page-title')
-new Blog
+New Blog Post
 @endsection
 
 
@@ -12,7 +12,7 @@ new Blog
 
             <div class="page-header">
                 <div class="page-title">
-                    <h3>Edit Blog Post</h3>
+                    <h3>New Blog Post</h3>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@ new Blog
                         <div class="widget-header">
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                    <h4>New Blog</h4>
+                                    <h4>New Post</h4>
                                 </div>
                             </div>
                         </div>
@@ -48,12 +48,13 @@ new Blog
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlInput2">Category Name</label>
                                     <select name="cat_id" class="form-control">
-                                        <option value="">Select Blog Category</option>
+                                        <option disabled selected>Select Blog Category</option>
                                         @foreach($categories as $cat)
                                             <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                                         @endforeach
                                     </select>
                                 <input type="submit" value="Save" name="time" class="mt-4 mb-4 btn btn-primary">
+                                <a href="/admin/blog" class="btn btn-secondary">Back</a>
                             </div>
                             </form>
                         </div>

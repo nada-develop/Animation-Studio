@@ -1,7 +1,7 @@
 @extends('back.master')
 
 @section('page-title')
-    Manage Blog Posts
+    Manage Portfolio Items
 @endsection
 
 @section('page-styles')
@@ -17,7 +17,7 @@
 
             <div class="page-header">
                 <div class="page-title">
-                    <h3>Manage Blog Posts</h3>
+                    <h3>Manage Portfolio Items</h3>
                 </div>
             </div>
 
@@ -30,31 +30,28 @@
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Title</th>
-                                        <th>Author Name</th>
-                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Production Date</th>
                                         <th>Category</th>
                                         <th class="no-content"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($blog_list as $post)
+                                    @foreach ($portfolio_list as $item)
                                     <tr>
-                                        <th>{{ $post->image }}</th>
-                                        <th>{{ $post->title }}</th>
-                                        <th>{{ $post->author_name }}</th>
-                                        <th>{{ $post->date }}</th>
-                                        <th>{{ $post->category_id }}</th>
-                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary">Edit</a></td>
+                                        <th>{{ $item->image }}</th>
+                                        <th>{{ $item->name }}</th>
+                                        <th>{{ $item->production_date }}</th>
+                                        <th>{{ $item->category_id }}</th>
+                                        <td><a href="/portfolio/{{ $item->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/portfolio/{{ $item->id }}/edit" class="btn btn-primary">Edit</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Title</th>
-                                        <th>Author Name</th>
-                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Production Date</th>
                                         <th>Category</th>
                                         <th></th>
                                     </tr>
