@@ -69,6 +69,9 @@
                             <a class="nav-link" href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/award">Awards</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/contact">Contacts</a>
                         </li>
                     </ul>

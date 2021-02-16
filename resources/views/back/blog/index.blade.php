@@ -45,7 +45,7 @@
                                         <th>{{ $post->author_name }}</th>
                                         <th>{{ $post->date }}</th>
                                         <th>{{ $post->category_id }}</th>
-                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary">Edit</a></td>
+                                        <td><a href="/blog/{{ $post->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/blog/{{ $post->id }}/edit" class="btn btn-primary mr-2">Edit</a><a href="/admin/blog/create" class="btn btn-primary ">New</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

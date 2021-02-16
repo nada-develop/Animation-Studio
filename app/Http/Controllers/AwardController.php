@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Award ;
+use App\Award;
 class AwardController extends Controller
 {
+
+//    AwardControllerfront
     public function index(){
         $award_list = Award::all();
-        return view('front.award', compact('award_list'));
+        return view('front.awards', compact('award_list'));
         // return view('back.award.index', compact('award_list'));
-    }
-    public function all(){
-        $award_list = Award::all();
-        return view('back.award.index', compact('award_list'));
     }
 
     public function show($id){
@@ -21,6 +19,13 @@ class AwardController extends Controller
         return view('front.award-item', compact('award_item'));
     }
 
+
+
+//    AwardControllerBack
+    public function all(){
+        $award_list = Award::all();
+        return view('back.award.index', compact('award_list'));
+    }
     public function edit($id){
         $award_item = Award::find($id);
         return view('back.award.edit', compact('award_item'));
@@ -31,11 +36,14 @@ class AwardController extends Controller
     public function store(){
         //هنا فاضل الimage
         $new_award = new Award;
+        $new_award->image = "image.jpg";
        $new_award->title =  request('title');
        $new_award->description = request('desc');
        $new_award->date = request('date');
        $new_award->save();
-        return view('back.blog.index');
+        // return view('back.award.index');
+        return redirect('/admin/award');
+
     }
     public function update($id){
         //هنا فاضل الimage
@@ -44,7 +52,9 @@ class AwardController extends Controller
        $update_award->description = request('desc');
        $update_award->date = request('date');
        $update_award->save();
-        return view('back.award.index');
+        // return view('back.award.index');
+        return redirect('/admin/award');
+
     }
 
 }

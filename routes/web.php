@@ -35,9 +35,9 @@ Route::get('/blog','BlogController@index');
 //loading a single blog post
 Route::get('/blog/{id}','BlogController@show');
 //loading awards
-Route::get('/awards','AwardController@index');
+Route::get('/award','AwardController@index');
 //loading single award
-Route::get('/awards/{id}','AwardController@show');
+Route::get('/award/{id}','AwardController@show');
 
 
 //---- BACK-END ROUTES
@@ -45,6 +45,8 @@ Route::get('/awards/{id}','AwardController@show');
 //------HomeControlle ROUTES
 Route::get('/admin', 'HomeController@dashboard');
 Route::get('/admin/pages', 'HomeController@indexPages');
+Route::get('/admin/award', 'AwardController@all');
+
 // loading contact form with info
 Route::get('/admin/pages/contact/edit', 'HomeController@edit_contact');
 // update contact info
@@ -65,24 +67,12 @@ Route::post('/admin/blog', 'BlogController@store');
 Route::get('/admin/blog/{id}/edit', 'BlogController@edit');
 Route::put('/admin/blog/{id}', 'BlogController@update');
 // Route::get('/admin/blog/blog{id}', 'BlogController@delete');
-
-
-
-
-
-
-
-
-
-
-
-
 // AwardControler ROUTES
 //display all awards
 Route::get('/admin/award', 'AwardController@all');
-Route::put('/admin/award/create', 'AwardController@create');
-Route::put('/admin/award', 'AwardController@store');
-Route::put('/admin/award/{id}/edit', 'AwardController@edit');
+Route::get('/admin/award/create', 'AwardController@create');
+Route::post('/admin/award', 'AwardController@store');
+Route::get('/admin/award/{id}/edit', 'AwardController@edit');
 Route::put('/admin/award/{id}', 'AwardController@update');
 
 
