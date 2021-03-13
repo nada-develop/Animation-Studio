@@ -62,7 +62,6 @@
                                 <a class="dropdown-item" href="/portfolio/movies">Movies</a>
                                 <a class="dropdown-item" href="/portfolio/series">Series</a>
                                 <a class="dropdown-item" href="/portfolio/advertisments">Advertisments</a>
-                                <a class="dropdown-item" href="/portfolio/short-films">Short Films</a>
                             </div>
                         </li>
                         <li class="nav-item">

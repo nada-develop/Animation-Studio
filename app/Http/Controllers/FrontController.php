@@ -23,7 +23,7 @@ class FrontController extends Controller
         public function about(){
             // $slide = Slide::find([1, 2]);
             $slide = Slide::whereIn('id', [1,3])->get();
-        //    $slide1 = $slide[0];
+            //$slide1 = $slide[0];
             // $aboutus = About::all();
             $portfolios = Portfolio::inRandomOrder()->limit(3)->get();
             $aboutus = About::orderByDesc('id')->get();

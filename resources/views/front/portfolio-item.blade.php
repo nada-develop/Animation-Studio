@@ -19,7 +19,7 @@ portfolio-item
                    <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                      <li class="breadcrumb-item"><a href="portfolio.html">Portfolio</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Modern Minimal Concept for Coolbabka Brand</li>
+                     <li class="breadcrumb-item active" aria-current="page"></li>
                    </ol>
                  </nav>
                </div>

@@ -41,6 +41,7 @@ Blog
     @foreach ($blog_list as $blogs)
                 <div class="col-post">
                     <div class="thumb-blog thumb-blog-1">
+                        <img  width="320" src="{{ asset('storage/blog-img/' . $blogs->image) }}" alt="">
                         <div class="post-date">{{$blogs->date}}</div>
                     </div>
                     <h3 class="title-h3 line-clamp">

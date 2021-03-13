@@ -27,13 +27,17 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form action="/admin/award/{{ $award_item->id }}" method="POST">
+                            <form action="/admin/award/{{ $award_item->id }}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
+                                @csrf
+                                <div class="form-group mb-4">
+                                    <label for="exampleFormControlInput2">Image</label>
+                                    <input type="file" class="form-control" id="exampleFormControlInput2" name="img" >
+                                </div>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlInput2">Title</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="title" value="{{ $award_item->title }}">
                                 </div>
-                                {{--   --}}
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlInput2">Description</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="desc" value="{{ $award_item->description }}">

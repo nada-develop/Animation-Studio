@@ -28,7 +28,12 @@ New Blog Post
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form action="/admin/blog" method="POST">
+                            <form action="/admin/blog" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group mb-4">
+                                    <label for="exampleFormControlInput2">Image</label>
+                                    <input type="file" class="form-control" id="exampleFormControlInput2" name="img" value="">
+                                </div>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlInput2">Title</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="title" value="">

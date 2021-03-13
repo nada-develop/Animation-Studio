@@ -25,7 +25,7 @@ Awards
         </div>
         <div class="section-banner__box">
            <div class="section-banner__thumb">
-               <img class="section-banner__img" src="https://via.placeholder.com/960x290" alt="Image Banner">
+               <img class="section-banner__img" src="https://via.placeholder.com/960x290 " alt="Image Banner">
            </div>
        </div>
     </section>
@@ -40,6 +40,7 @@ Awards
     @foreach ($award_list as $award)
                 <div class="col-post">
                     <div class="thumb-blog thumb-blog-1">
+                        <img  width="320" src="{{ asset('storage/about-img/' . $award->image) }}" alt="">
                         <div class="post-date">{{$award->date}}</div>
                     </div>
                     <h3 class="title-h3 line-clamp">

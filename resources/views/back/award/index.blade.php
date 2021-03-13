@@ -41,10 +41,10 @@
                                     @foreach ($award_list as $item)
                                       <tr>
                                         <td>{{ $item->title }}</td>
-                                        {{-- <td>{{ $item->image }}</td> --}}
+                                        <td>{{ $item->image }}</td>
                                         <td>{{ $item->description}}</td>
                                         <td>{{ $item->date }}</td>
-                                        <td><a href="/admin/award/{{ $item->id }}/edit">Edit</a>--<a href="/admin/award/create">New</a></td>
+                                        <td><a href="/admin/award/{{ $item->id }}/edit"  class="btn btn-secondary mr-2">Edit</a>-<a href="/award/{{ $item->id }}" class="btn btn-secondary mr-2" target="_blank">View</a></td>
                                       </tr>
                                     @endforeach
                                 </tbody>
@@ -53,7 +53,8 @@
                                         <th>Title</th>
                                         <th>Image</th>
                                         <th>Description</th>
-                                        <th>Date</th>                                        <th></th>
+                                        <th>Date</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>

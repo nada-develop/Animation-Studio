@@ -28,9 +28,11 @@ class BlogController extends Controller
         return view('back.blog.new', compact('categories'));
     }
 
-    public function store(){
-        //هنا فاضل الimage
+    public function store(Request $request){
+        $image_name =  $request->file('img')->getClientOriginalName();
+        $request->file('img')->storeAs('public/blog-img/',$image_name);
        $new_blog = new Blog();
+       $new_blog->image = $image_name;
        $new_blog->title =  request('title');
        $new_blog->description = request('desc');
        $new_blog->author_name = request('author');
@@ -46,9 +48,11 @@ class BlogController extends Controller
         return view('back.blog.edit',compact('blog_item', 'categories'));
     }
 
-    public function update($id){
-        //هنا فاضل الimage
-       $update_blog = Blog::find($id);
+    public function update($id, Request $request){
+        $image_name =  $request->file('img')->getClientOriginalName();
+        $request->file('img')->storeAs('public/blog-img/',$image_name);
+        $update_blog = Blog::find($id);
+        $update_blog->image = $image_name;
        $update_blog->title =  request('title');
        $update_blog->description = request('desc');
        $update_blog->author_name = request('author');

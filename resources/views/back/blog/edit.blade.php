@@ -31,8 +31,12 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form action="/admin/blog/{{ $blog_item->id }}" method="POST">
+                            <form action="/admin/blog/{{ $blog_item->id }}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
+                                <div class="form-group mb-4">
+                                    <label for="exampleFormControlInput2">Image</label>
+                                    <input type="file" class="form-control" id="exampleFormControlInput2" name="img" value="{{ $blog_item->image }}">
+                                </div>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlInput2">Title</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="title" value="{{ $blog_item->title }}">

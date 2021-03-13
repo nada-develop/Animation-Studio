@@ -42,7 +42,7 @@
                                         <th>{{ $item->image }}</th>
                                         <th>{{ $item->name }}</th>
                                         <th>{{ $item->production_date }}</th>
-                                        <th>{{ $item->category_id }}</th>
+                                        <th>{{ $item->category->category_name}}</th>
                                         <td><a href="/portfolio/{{ $item->id }}" class="btn btn-secondary mr-2" target="_blank">View</a><a href="/admin/portfolio/{{ $item->id }}/edit" class="btn btn-primary">Edit</a></td>
                                     </tr>
                                     @endforeach

@@ -39,7 +39,7 @@
             <div class="row row-post">
               <div class="col-xl-9 col-md-12 col-sm-12 col-12">
                 <div class="thumb-post">
-                    <img class="thumb-post__img" src="https://via.placeholder.com/848x390" alt="App Development">
+                    <img class="thumb-post__img" src="{{ asset('storage/blog-img/' . $blog_item->image) }}" alt="App Development">
                 </div>
                 <div class="post-info">
                     <div class="post-info-item">
